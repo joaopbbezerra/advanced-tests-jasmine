@@ -1,0 +1,8 @@
+<div class="photo-frame-container">
+    <img [src]="src" [alt]="description" tapindex="0" class="photo">
+    <div class="like-bar">
+        <app-like-widget [likes]="likes" (liked)="like()">
+
+        </app-like-widget>
+    </div>
+</div>
