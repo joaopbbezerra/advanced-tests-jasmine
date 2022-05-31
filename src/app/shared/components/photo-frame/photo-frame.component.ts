@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Subject } from 'rxjs/internal/Subject';
+import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -19,11 +19,8 @@ export class PhotoFrameComponent implements OnInit, OnDestroy {
   @Input() public description = '';
   @Input() public src = '';
   @Input() public likes = 0;
-
   private debounceSubject: Subject<void> = new Subject();
   private unsubscribe: Subject<void> = new Subject();
-
-  constructor() {}
 
   public ngOnInit(): void {
     this.debounceSubject
@@ -31,17 +28,14 @@ export class PhotoFrameComponent implements OnInit, OnDestroy {
       .pipe(debounceTime(500))
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(() => this.liked.emit());
-
-    
-  }
-
-  public like(): void {
-    this.debounceSubject.next();
-    console.log("this.likes", this.likes)
   }
 
   public ngOnDestroy(): void {
     this.unsubscribe.next();
     this.unsubscribe.complete();
+  }
+
+  public like(): void {
+    this.debounceSubject.next();
   }
 }
