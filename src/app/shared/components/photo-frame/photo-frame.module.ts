@@ -14,4 +14,3 @@ import { LikeWidgetModule } from '../like-widget/like-widget.module';
   exports: [PhotoFrameComponent]
 })
 export class PhotoFrameModule { }
- 
