@@ -14,7 +14,7 @@ import { PhotoFrameModule } from './shared/components/photo-frame/photo-frame.mo
     BrowserModule,
     AppRoutingModule,
     LikeWidgetModule,
-    PhotoFrameModule
+    PhotoFrameModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
