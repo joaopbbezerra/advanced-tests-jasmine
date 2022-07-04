@@ -55,10 +55,10 @@ describe(LikeWidgetComponent.name, () => {
     likeWidgetContainerEl.click();
   });
 
-  it('(D) Should display number of likes when ENTER key is pressed', done => {
+  /*it('(D) Should display number of likes when ENTER key is pressed', done => {
     likedSubscription(done);
     const likeWidgetContainerEl: HTMLElement = fixture.nativeElement.querySelector('.like-widget-container');
     const event = new KeyboardEvent('keyup', {key: 'Enter'});
     likeWidgetContainerEl.dispatchEvent(event);
-  });
+  });*/
 });
